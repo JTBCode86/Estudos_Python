@@ -1,5 +1,7 @@
 import os
-restaurantes =['Pizza','Sushi']
+restaurantes =[{'nome': 'Praça','Categoria':'Japonesa','Ativo':False},
+               {'nome': 'Pizza Suprema', 'Categoria': 'Pizza','Ativo':True},
+               {'nome':'Cantina','Categoria':'Italiano','Ativo':False}]
 
 def exibir_nome_programa():
     print('\n 𝕊𝕒𝕓𝕠𝕣 𝔼𝕩𝕡𝕣𝕖𝕤𝕤 \n')
@@ -38,9 +40,12 @@ def cadastrar_novo_restaurante():
 def listar_restaurante():
     exibir_subtitulo('Listando os restaurantes')
 
-    #lista de repetição utilização do for
     for restaurante in restaurantes:
-        print(f'.{restaurante}') 
+        nome_restaurante = restaurante['nome']
+        nome_categoria = restaurante['Categoria']
+        ativo = restaurante['Ativo']
+
+        print(f'- {nome_restaurante} | {nome_categoria} | {ativo}') 
 
     voltar_ao_menu_principal()
 
