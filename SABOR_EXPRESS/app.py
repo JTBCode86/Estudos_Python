@@ -1,7 +1,7 @@
 import os
-restaurantes =[{'nome': 'Praça','Categoria':'Japonesa','Ativo':False},
-               {'nome': 'Pizza Suprema', 'Categoria': 'Pizza','Ativo':True},
-               {'nome':'Cantina','Categoria':'Italiano','Ativo':False}]
+restaurantes =[{'nome': 'Praça','categoria':'Japonesa','ativo':False},
+               {'nome': 'Pizza Suprema', 'categoria': 'Pizza','ativo':True},
+               {'nome':'Cantina','categoria':'Italiano','ativo':False}]
 
 def exibir_nome_programa():
     print('\n 𝕊𝕒𝕓𝕠𝕣 𝔼𝕩𝕡𝕣𝕖𝕤𝕤 \n')
@@ -30,23 +30,20 @@ def exibir_subtitulo(texto):
 
 def cadastrar_novo_restaurante():
     exibir_subtitulo('Cadastro de novos restaurantes')
-  
     nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
-    restaurantes.append(nome_do_restaurante)
-  
+    categoria = input(f'Digite o nome da categoria do restaurante {nome_do_restaurante}: ')
+    dados_do_restaurante = {'nome':nome_do_restaurante,'categoria':categoria,'ativo':False}
+    restaurantes.append(dados_do_restaurante)
     print(f'\n O restaurante {nome_do_restaurante} foi cadastrado com sucesso!\n')
     voltar_ao_menu_principal()
 
 def listar_restaurante():
     exibir_subtitulo('Listando os restaurantes')
-
     for restaurante in restaurantes:
         nome_restaurante = restaurante['nome']
-        nome_categoria = restaurante['Categoria']
-        ativo = restaurante['Ativo']
-
-        print(f'- {nome_restaurante} | {nome_categoria} | {ativo}') 
-
+        categoria = restaurante['categoria']
+        ativo = restaurante['ativo']
+        print(f' - {nome_restaurante} | {categoria} | {ativo}') 
     voltar_ao_menu_principal()
 
 def escolher_opcao():
