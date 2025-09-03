@@ -9,11 +9,40 @@ def exibir_opcoes():
     print('2. Listar Restaurantes')
     print('3. Ativar Restaurantes')
     print('4. Sair Restaurantes\n')
-    
+
+def finalizar_app():
+    exibir_subtitulo('Finalizando o app...')
+
+def voltar_ao_menu_principal():
+    input('\nDigite uma tecla para voltar ao menu principal\n')
+    main()
+
 def opcao_invalida():
     print('Opção invalida!\n')
-    input('Digite uma tecla para voltar ao menu principal.\n')
-    main()
+    voltar_ao_menu_principal()
+
+def exibir_subtitulo(texto):
+    os.system('cls')
+    print(texto)
+    print()
+
+def cadastrar_novo_restaurante():
+    exibir_subtitulo('Cadastro de novos restaurantes')
+  
+    nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
+    restaurantes.append(nome_do_restaurante)
+  
+    print(f'\n O restaurante {nome_do_restaurante} foi cadastrado com sucesso!\n')
+    voltar_ao_menu_principal()
+
+def listar_restaurante():
+    exibir_subtitulo('Listando os restaurantes')
+
+    #lista de repetição utilização do for
+    for restaurante in restaurantes:
+        print(f'.{restaurante}') 
+
+    voltar_ao_menu_principal()
 
 def escolher_opcao():
     try:
@@ -31,32 +60,6 @@ def escolher_opcao():
             opcao_invalida()
     except: 
             opcao_invalida()
-
-def finalizar_app():
-    os.system('cls')
-    print('Finalizando o app...\n')
-
-def cadastrar_novo_restaurante():
-    os.system('cls')
-    print('Cadastro de novos restaurantes\n')
-  
-    nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
-    restaurantes.append(nome_do_restaurante)
-  
-    print(f'\n O restaurante {nome_do_restaurante} foi cadastrado com sucesso!\n')
-    input('Digite uma tecla para voltar ao menu principal\n')
-    main()
-
-def listar_restaurante():
-    os.system('cls')
-    print('Listando os restaurantes\n')
-
-    #lista de repetição utilização do for
-    for restaurante in restaurantes:
-        print(f'.{restaurante}') 
-
-    input('Digite uma tecla para voltar ao menu principal\n')
-    main()
 
 def main():
     os.system('cls')
