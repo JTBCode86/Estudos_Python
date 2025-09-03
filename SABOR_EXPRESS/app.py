@@ -14,15 +14,8 @@ def finalizar_app():
     print('Finalizando o app.\n')
 
 def escolher_opcao():
-    #opcao_escolhida = input('Escolha uma das opções: ')
-    opcao_escolhida = int(input('Escolha uma das opções: '))
-        
-    #print(f'Você escolheu a opção { opcao_escolhida}')
-    #print(opcao_escolhida == 1)
-    #print(type(opcao_escolhida))
-    #print(type(1))
-    #opcao_escolhida= int(opcao_escolhida)
 
+    opcao_escolhida = int(input('Escolha uma das opções: '))
     if opcao_escolhida ==1:
         print('Cadastrar Restaurantes')
     elif opcao_escolhida ==2:
@@ -30,8 +23,6 @@ def escolher_opcao():
     elif opcao_escolhida ==3:
         print('Ativar Restaurantes')    
     else:
-        #Implementar uma função no lugar do print. 
-        #print('Encerrando o programa.')
         finalizar_app()
 
 def main():
